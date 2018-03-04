@@ -1,0 +1,37 @@
+@startuml
+
+title UI_Logic package
+
+
+interface Observer
+class UIObservable
+
+class Canvas
+class JFrame
+package UI_Logic{
+class WindowFrame
+class CanvasDrawer
+class PlayerViewMover
+class PlayerDrawer
+class BlockDrawer
+interface ObjectDrawer{
++draw()
+}
+
+
+interface ViewMover{
+    +void moveDrawing()
+}
+}
+ObjectDrawer <|-- PlayerDrawer
+ObjectDrawer <|-- BlockDrawer
+ViewMover <|-- PlayerViewMover
+Observer <|--ObjectDrawer
+Observer <|-- ViewMover
+Canvas <|-- CanvasDrawer
+JFrame <|-- WindowFrame
+UIObservable <-- CanvasDrawer
+UIObservable --> Observer
+
+
+@enduml

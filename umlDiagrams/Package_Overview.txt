@@ -1,0 +1,16 @@
+@startuml
+
+title Packages - Overview
+
+package UI_Logic{}
+package ImageLoader{}
+package AppBootstraper{}
+package InputLogic{}
+package GameLogic{}
+
+AppBootstraper -->UI_Logic
+AppBootstraper -->ImageLoader
+AppBootstraper --> InputLogic
+AppBootstraper -->GameLogic
+
+@enduml

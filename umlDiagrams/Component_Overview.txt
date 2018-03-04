@@ -1,0 +1,28 @@
+@startuml
+
+title Interfaces - Component Diagram
+
+[UI Logic] as UI
+[Game Logic] as GL
+component [Input Logic] as IL
+[ImageLoader] as ImL
+[FrameController] as FC
+
+interface ObjectDrawer
+interface ViewMover
+interface InputEvent
+interface Images
+
+UI -- ObjectDrawer
+UI -- ViewMover
+IL -- InputEvent
+ImL -- Images
+
+
+GL -up-( ObjectDrawer
+GL -up-( ViewMover
+GL -up-( InputEvent
+GL -up-( Images
+
+
+@enduml
